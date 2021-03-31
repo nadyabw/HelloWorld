@@ -13,8 +13,8 @@ public class NewBehaviourScript : MonoBehaviour
     {
         result = 0;
         turnsNumber = 0;
-        print("Введите число от 0 до 9.");
-        textStart.text = "Введите число от 0 до 9.";
+        print("Введите число от 1 до 9.");
+        textStart.text = "Введите число от 1 до 9.";
 
     }
 
@@ -30,8 +30,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void ShowGameOverMessage() 
     {
-        print("Игра окончена. Результат - " + result + ". Количество ходов - " + turnsNumber + ".");
-        textEnd.text = "Игра окончена. Результат - " + result + ". Количество ходов - " + turnsNumber + ".";
+       textEnd.text = "Игра окончена. Результат - " + result + ". Количество ходов - " + turnsNumber + ".";
     }
 
     private void CheckPressedKeys()
@@ -88,7 +87,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
              result = 0;
              turnsNumber = 0;
-             print("Введите число от 0 до 9.");
+             
         }
 
 
@@ -96,6 +95,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             turnsNumber++;
             CheckGameState();
+            
         }
     }
 
@@ -103,15 +103,16 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (result >= gameOverValue)
         {
+            
             ShowGameOverMessage();
+            Start();
            
         }
         else
         {
-            print("Результат - " + result + ".");
+            
             text.text = "Результат - " + result + ".";
-            print("Введите число от 0 до 9.");
-            textStart.text = "Введите число от 0 до 9.";
+            textStart.text = "Введите число от 1 до 9.";
                        
             
         }
